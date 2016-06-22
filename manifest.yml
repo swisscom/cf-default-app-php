@@ -1,0 +1,5 @@
+---
+applications:
+  - name: default-app-php
+    memory: 64M
+    buildpack: php_buildpack
