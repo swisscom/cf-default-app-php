@@ -1,12 +1,15 @@
-# DESCRIPTION
+# CF Default App PHP
 
-php default Application to be pushed when the developer does not upload any WAR or ZIP file during creation of an application in the portal.
+The default PHP app that will be pushed into the Swisscom Application Cloud if the user doesn't provide any source code.
 
-# BUILD
+## Run locally
 
-    zip the folder
+1. Install [PHP](https://secure.php.net/manual/en/install.php)
+1. Run `php -S localhost:3000 -t public`
+1. Visit [http://localhost:3000](http://localhost:3000)
 
-# DEPLOY with CLOUDFOUNDRY
+## Run in the cloud
 
-    cf push <APP-NAME> -p target/default-app.zip
-
+1. Install the [cf CLI](https://github.com/cloudfoundry/cli#downloads)
+1. Run `cf push my-php-app --random-route`
+1. Visit the given URL
