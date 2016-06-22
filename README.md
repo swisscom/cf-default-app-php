@@ -5,7 +5,7 @@ The default PHP app that will be pushed into the Swisscom Application Cloud if t
 ## Run locally
 
 1. Install [PHP](https://secure.php.net/manual/en/install.php)
-1. Run `php -S localhost:3000 -t public`
+1. Run `php -S localhost:3000 -t htdocs`
 1. Visit [http://localhost:3000](http://localhost:3000)
 
 ## Run in the cloud
