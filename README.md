@@ -1,6 +1,6 @@
 # CF Default App PHP
 
-The default PHP app that will be pushed into the Swisscom Application Cloud if the user doesn't provide any source code.
+The default PHP app that will be pushed into the Swisscom Application cloud if no source code is provided.
 
 ## Run locally
 
