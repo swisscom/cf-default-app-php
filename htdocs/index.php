@@ -4,13 +4,14 @@
     <title>PHP in the Cloud</title>
     <meta charset='utf-8'>
     <link href='resources/stylesheets/comstrap.min.css' rel='stylesheet'>
+    <link rel="icon" href="resources/favicon.ico">
   </head>
   <body>
     <div class='container'>
 
       <div class='row' style='margin-top:2em;margin-bottom:1em'>
         <div class='col-xs-12'>
-          <img alt='Ruby' src='resources/images/php.svg' style='height:3em'>
+          <img alt='PHP' src='resources/images/php.svg' style='height:3em'>
         </div>
       </div>
 
@@ -47,7 +48,35 @@
         <div class='row' style='margin-top:1em;margin-bottom:1em'>
           <div class='col-xs-12'>
             <h3>Environment Variables</h3>
-            <pre><?php foreach($_ENV  as $key => $value){ ?><p style="margin-bottom:0.1em"><strong><?=$key; ?>:</strong><span class="text-danger"> <?=$value; ?></span></p><?php } ?></pre>
+<pre>
+<?php foreach($_ENV  as $key => $value){ ?>
+<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<?php } ?>
+</pre>
+          </div>
+        </div>
+      <?php } ?>
+
+      <?php
+        $headers = array();
+        foreach($_SERVER as $key => $value) {
+          if (substr($key, 0, 5) <> 'HTTP_') {
+            continue;
+          }
+          $header = str_replace(' ', '-', ucwords(str_replace('_', ' ', strtolower(substr($key, 5)))));
+          $headers[$header] = $value;
+        }
+
+        if ($headers){
+        ?>
+        <div class='row' style='margin-top:1em;margin-bottom:1em'>
+          <div class='col-xs-12'>
+            <h3>Request Headers</h3>
+<pre>
+<?php foreach($headers as $key => $value){ ?>
+<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<?php } ?>
+</pre>
           </div>
         </div>
       <?php } ?>
@@ -56,7 +85,11 @@
         <div class='row' style='margin-top:1em;margin-bottom:1em'>
           <div class='col-xs-12'>
             <h3>Request Parameters</h3>
-            <pre><?php foreach($_REQUEST  as $key => $value){ ?><p style="margin-bottom:0.1em"><strong><?=$key; ?>:</strong><span class="text-danger"> <?=$value; ?></span></p><?php } ?></pre>
+<pre>
+<?php foreach($_REQUEST  as $key => $value){ ?>
+<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<?php } ?>
+</pre>
           </div>
         </div>
       <?php } ?>
