@@ -50,7 +50,7 @@
             <h3>Environment Variables</h3>
 <pre>
 <?php foreach($_ENV  as $key => $value){ ?>
-<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<strong><?=htmlspecialchars($key) ?>:</strong><span class="text-danger"> <?=htmlspecialchars($value) ?></span>
 <?php } ?>
 </pre>
           </div>
@@ -74,7 +74,7 @@
             <h3>Request Headers</h3>
 <pre>
 <?php foreach($headers as $key => $value){ ?>
-<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<strong><?=htmlspecialchars($key) ?>:</strong><span class="text-danger"> <?=htmlspecialchars($value) ?></span>
 <?php } ?>
 </pre>
           </div>
@@ -87,7 +87,7 @@
             <h3>Request Parameters</h3>
 <pre>
 <?php foreach($_REQUEST  as $key => $value){ ?>
-<strong><?=$key ?>:</strong><span class="text-danger"> <?=$value ?></span>
+<strong><?=htmlspecialchars($key) ?>:</strong><span class="text-danger"> <?=htmlspecialchars($value) ?></span>
 <?php } ?>
 </pre>
           </div>
